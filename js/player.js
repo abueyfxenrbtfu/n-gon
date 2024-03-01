@@ -137,8 +137,8 @@ const m = {
         x: 0,
         y: 0
     },
-    legLength1: 55,
-    legLength2: 45,
+    legLength1: 125,
+    legLength2: 110,
     transX: 0,
     transY: 0,
     history: new Array(600), //[], //tracks the last second of player position
