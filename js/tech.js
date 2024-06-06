@@ -306,6 +306,33 @@ const tech = {
         }
     },
     {
+           name: "Fast ahh weapon",
+        description: "<strong>100x</strong> <em>fire rate</em><br>while <strong>firing</strong> your <strong>position</strong> is fixed",
+        maxCount: 1,
+        count: 0,
+        frequency: 1,
+        frequencyDefault: 1,
+        isSkin: true,
+        allowed() {
+            return !m.isAltSkin && !m.isShipMode && !tech.isAlwaysFire
+        },
+        requires: "not skinned, ship mode, automatic",
+        effect() {
+            tech.isFireMoveLock = true;
+            b.setFireCD();
+            b.setFireMethod();
+            m.skin.strokeGap();
+        },
+        remove() {
+            tech.isFireMoveLock = false
+            if (tech.isFireMoveLock) {
+                b.setFireCD();
+                b.setFireMethod();
+                if (this.count) m.resetSkin();
+            }
+        }
+    },
+    {
         name: "nitinol",
         description: "<strong>5x</strong> <strong>movement</strong> and <strong>jumping</strong><br><strong>5x</strong> <strong class='color-defense'>damage taken</strong>",
         maxCount: 1,
@@ -333,8 +360,8 @@ const tech = {
         }
     },
     {
-        name: "Higgs mechanism",
-        description: "<strong>20x</strong> <em>fire rate</em><br>while <strong>firing</strong> your <strong>position</strong> is fixed",
+        name: "Higgs Mechagnism",
+        description: "<strong>4x</strong> <em>fire rate</em><br>while <strong>firing</strong> your <strong>position</strong> is fixed",
         maxCount: 1,
         count: 0,
         frequency: 1,
