@@ -306,7 +306,7 @@ const tech = {
         }
     },
     {
-           name: "Fast ahh weapon",
+           name: "EVERYTHING SHOOTS HELLA FAST",
         description: "<strong>100x</strong> <em>fire rate</em><br>while <strong>firing</strong> your <strong>position</strong> is fixed",
         maxCount: 1,
         count: 0,
@@ -319,7 +319,7 @@ const tech = {
         requires: "not skinned, ship mode, automatic",
         effect() {
             tech.isFireMoveLock = true;
-            b.setFireCD();
+            b.setFireCD(0.01);
             b.setFireMethod();
             m.skin.strokeGap();
         },
