@@ -280,9 +280,9 @@ const tech = {
         }
     },
     tech: [{
-        name: "tungsten carbide",
+        name: "extra health permit",
         description: "<strong>+1000</strong> maximum <strong class='color-h'>health</strong><br><strong>lose</strong> <strong class='color-h'>health</strong> after hard <strong>landings</strong>",
-        maxCount: 1,
+        maxCount: 100,
         count: 0,
         frequency: 1,
         frequencyDefault: 1,
@@ -333,7 +333,7 @@ const tech = {
         }
     },
     {
-        name: "nitinol",
+        name: "small jog",
         description: "<strong>5x</strong> <strong>movement</strong> and <strong>jumping</strong><br><strong>5x</strong> <strong class='color-defense'>damage taken</strong>",
         maxCount: 1,
         count: 0,
@@ -347,8 +347,8 @@ const tech = {
         effect() {
             m.skin.mech();
             tech.hardLanding = 50
-            tech.squirrelFx += 0.4;
-            tech.squirrelJump += 0.5;
+            tech.squirrelFx += 5;
+            tech.squirrelJump += 5;
             m.setMovement()
         },
         remove() {
@@ -361,7 +361,7 @@ const tech = {
     },
     {
         name: "Higgs Mechagnism",
-        description: "<strong>4x</strong> <em>fire rate</em><br>while <strong>firing</strong> your <strong>position</strong> is fixed",
+        description: "<strong>100x</strong> <em>fire rate</em><br>while <strong>firing</strong> your <strong>position</strong> is fixed",
         maxCount: 1,
         count: 0,
         frequency: 1,
@@ -636,7 +636,7 @@ const tech = {
     {
         name: "ternary", //"divisor",
         descriptionFunction() {
-            return `<strong>1.8x</strong> <strong class='color-d'>damage</strong> while your current <strong class='color-g'>gun</strong><br>has <strong class='color-ammo'>ammo</strong> divisible by <strong>3</strong>`
+            return `<strong>10x</strong> <strong class='color-d'>damage</strong> while your current <strong class='color-g'>gun</strong><br>has <strong class='color-ammo'>ammo</strong> divisible by <strong>10</strong>`
         },
         maxCount: 1,
         count: 0,
@@ -644,7 +644,7 @@ const tech = {
         frequencyDefault: 1,
         allowed: () => true,
         requires: "",
-        // divisible: 3, // + Math.floor(6 * Math.random()),
+        // divisible: 10, // + Math.floor(6 * Math.random()),
         effect() {
             tech.isDivisor = true;
         },
