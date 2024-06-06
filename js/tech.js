@@ -281,7 +281,7 @@ const tech = {
     },
     tech: [{
         name: "tungsten carbide",
-        description: "<strong>+300</strong> maximum <strong class='color-h'>health</strong><br><strong>lose</strong> <strong class='color-h'>health</strong> after hard <strong>landings</strong>",
+        description: "<strong>+1000</strong> maximum <strong class='color-h'>health</strong><br><strong>lose</strong> <strong class='color-h'>health</strong> after hard <strong>landings</strong>",
         maxCount: 1,
         count: 0,
         frequency: 1,
@@ -299,7 +299,7 @@ const tech = {
             m.skin.tungsten()
         },
         remove() {
-            tech.hardLanding = 130
+            tech.hardLanding = 50
             tech.isFallingDamage = false;
             m.setMaxHealth();
             if (this.count) m.resetSkin();
@@ -334,7 +334,7 @@ const tech = {
     },
     {
         name: "Higgs mechanism",
-        description: "<strong>4x</strong> <em>fire rate</em><br>while <strong>firing</strong> your <strong>position</strong> is fixed",
+        description: "<strong>20x</strong> <em>fire rate</em><br>while <strong>firing</strong> your <strong>position</strong> is fixed",
         maxCount: 1,
         count: 0,
         frequency: 1,
