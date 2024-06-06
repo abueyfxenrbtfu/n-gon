@@ -362,7 +362,7 @@ const tech = {
     {
         name: "Higgs Mechagnism",
         description: "<strong>100x</strong> <em>fire rate</em><br>while <strong>firing</strong> your <strong>position</strong> is fixed",
-        maxCount: 1,
+        maxCount: 100,
         count: 0,
         frequency: 1,
         frequencyDefault: 1,
