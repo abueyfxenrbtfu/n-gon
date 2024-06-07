@@ -280,9 +280,9 @@ const tech = {
         }
     },
     tech: [{
-        name: "extra health permit",
-        description: "<strong>+1000</strong> maximum <strong class='color-h'>health</strong><br><strong>lose</strong> <strong class='color-h'>health</strong> after hard <strong>landings</strong>",
-        maxCount: 100,
+        name: "Tougher Metal",
+        description: "<strong>+500</strong> maximum <strong class='color-h'>health</strong><br><strong>lose</strong> <strong class='color-h'>health</strong> after hard <strong>landings</strong>",
+        maxCount: 1,
         count: 0,
         frequency: 1,
         frequencyDefault: 1,
@@ -292,7 +292,7 @@ const tech = {
         },
         requires: "not skin",
         effect() {
-            tech.hardLanding = 70
+            tech.hardLanding = 100
             tech.isFallingDamage = true;
             m.setMaxHealth();
             m.addHealth(3 / simulation.healScale)
@@ -333,8 +333,8 @@ const tech = {
         }
     },
     {
-        name: "small jog",
-        description: "<strong>5x</strong> <strong>movement</strong> and <strong>jumping</strong><br><strong>5x</strong> <strong class='color-defense'>damage taken</strong>",
+        name: "Nitinol",
+        description: "<strong>1.2x</strong> <strong>movement</strong> and <strong>jumping</strong><br><strong>1.2x</strong> <strong class='color-defense'>damage taken</strong>",
         maxCount: 1,
         count: 0,
         frequency: 1,
@@ -347,8 +347,8 @@ const tech = {
         effect() {
             m.skin.mech();
             tech.hardLanding = 50
-            tech.squirrelFx += 5;
-            tech.squirrelJump += 5;
+            tech.squirrelFx += 1.2;
+            tech.squirrelJump += 1.2;
             m.setMovement()
         },
         remove() {
@@ -361,11 +361,11 @@ const tech = {
     },
     {
         name: "Higgs Mechagnism",
-        description: "<strong>100x</strong> <em>fire rate</em><br>while <strong>firing</strong> your <strong>position</strong> is fixed",
-        maxCount: 100,
-        count: 100,
-        frequency: 100,
-        frequencyDefault: 100,
+        description: "<strong>4x</strong> <em>fire rate</em><br>while <strong>firing</strong> your <strong>position</strong> is fixed",
+        maxCount: 1,
+        count: 0,
+        frequency: 1,
+        frequencyDefault: 1,
         isSkin: true,
         allowed() {
             return !m.isAltSkin && !m.isShipMode && !tech.isAlwaysFire
@@ -636,7 +636,7 @@ const tech = {
     {
         name: "ternary", //"divisor",
         descriptionFunction() {
-            return `<strong>10x</strong> <strong class='color-d'>damage</strong> while your current <strong class='color-g'>gun</strong><br>has <strong class='color-ammo'>ammo</strong> divisible by <strong>10</strong>`
+            return `<strong>3x</strong> <strong class='color-d'>damage</strong> while your current <strong class='color-g'>gun</strong><br>has <strong class='color-ammo'>ammo</strong> divisible by <strong>3</strong>`
         },
         maxCount: 1,
         count: 0,
@@ -644,7 +644,7 @@ const tech = {
         frequencyDefault: 1,
         allowed: () => true,
         requires: "",
-        // divisible: 10, // + Math.floor(6 * Math.random()),
+        // divisible: 3, // + Math.floor(6 * Math.random()),
         effect() {
             tech.isDivisor = true;
         },
